@@ -1,7 +1,7 @@
 .todo-add-container{
   padding: 10px;
   background-color:lavender ;
-  padding-top: 20px;
+  padding-top: 30px;
   display:flex;
   flex-direction: column;
 }
@@ -9,18 +9,18 @@
   display: flex;
 }
 .todo-add-input{
-  font-size: 18px; 
+  font-size: 22px; 
   background-color:rgb(175, 200, 201);
   border: 2px solid darkseagreen;
   outline: none;
-  padding: 5px;
+  padding: 8px 5px;
   color: darkred;
   font-weight: 600;
 }
 .todo-add-button{
-  padding: 5px 30px;
+  padding: 10px 30px;
   background-color: darkcyan;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   color: powderblue;
   border: 2px solid  rgb(139, 132, 190);
@@ -48,11 +48,11 @@
   /* background-color: aliceblue; */
 }
 .todo-edit-input{
-  padding: 5px 2px;
+  padding: 10px 2px;
   background-color: rgb(248, 204, 210);
   color: maroon;
-  font-weight: 500;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 18px;
   width: 100px;
   border: 2px solid rgb(230, 149, 69);
   border-radius: 8px;
@@ -62,8 +62,8 @@
 }
 .todo-delete, .todo-edit, .todo-save{
   font-weight: 600;
-  font-size: 14px;
-  padding: 5px 10px;
+  font-size: 16px;
+  padding: 8px 20px;
 }
 .todo-delete{
   background-color: firebrick;
