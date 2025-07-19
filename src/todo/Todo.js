@@ -1,52 +1,67 @@
-import {useState} from 'react'
-import AddTodo from './AddTodo'
-import TaskList from './TaskList'
+import { useEffect, useState } from "react";
 
-let nextId = 3;
-const initialTodos = [
-    {id: 0, title: 'Buy milk', done: true},
-    {id: 1, title: 'Eat tacos', done: false},
-    {id:2, title: 'Brew tea', doen: false},
-]
+import AddTodo from "./AddTodo";
+import TaskList from "./TaskList";
 
-export default function TaskApp(){
-    const [todos, setTodos] = useState(initialTodos)
+const localStorageKey = "todoItems";
+let nextId = 0;
 
+export default function TaskApp() {
+  const [todos, setTodo] = useState([]);
 
-    function handleAddTodo(title){
-        if(title !== ''){
-            setTodos([...todos,{
-                id: nextId++,
-                title: title,
-                done: false,
-            }])
-        }
+  useEffect(() => {
+    const todoItems = localStorage.getItem(localStorageKey);
+    if (todoItems) {
+      const parsedTodoItems = JSON.parse(todoItems);
+      setTodo(parsedTodoItems);
+      nextId = parsedTodoItems.length;
     }
+  }, []);
 
-    function handleChangeTodo(nextTodo){
-        setTodos(todos.map(x => {
-            if(x.id === nextTodo.id){
-                return nextTodo
-            } else {
-                return x
-            }
-        }))
+  function handleAddTodo(title) {
+    if (title !== "") {
+      const todoItems = [
+        ...todos,
+        {
+          id: nextId++,
+          title: title,
+          done: false,
+        },
+      ];
+      setTodo(todoItems);
+
+      localStorage.setItem(localStorageKey, JSON.stringify(todoItems));
     }
+  }
 
-    function handleDeleteTodo(todoid){
-        setTodos(todos.filter(x => 
-            x.id !== todoid
-        ))
-    }
+  function handleChangeTodo(updatedTodo) {
+    const todoItems = todos.map((todo) => {
+      if (todo.id === updatedTodo.id) {
+        return updatedTodo;
+      } else {
+        return todo;
+      }
+    });
+    setTodo(todoItems);
 
-    return(
-        <>
-            <AddTodo onAddTodo = {handleAddTodo}/>
-            <TaskList 
-                todos={todos}
-                onChangeTodo={handleChangeTodo}
-                onDeleteTodo={handleDeleteTodo}
-            />
-        </>
-    )
+    localStorage.setItem(localStorageKey, JSON.stringify(todoItems));
+  }
+
+  function handleDeleteTodo(todoId) {
+    const todoItems = todos.filter((todo) => todo.id !== todoId);
+    setTodo(todoItems);
+
+    localStorage.setItem(localStorageKey, JSON.stringify(todoItems));
+  }
+
+  return (
+    <>
+      <AddTodo onAddTodo={handleAddTodo} />
+      <TaskList
+        todos={todos}
+        onChangeTodo={handleChangeTodo}
+        onDeleteTodo={handleDeleteTodo}
+      />
+    </>
+  );
 }
