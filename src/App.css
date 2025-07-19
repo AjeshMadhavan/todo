@@ -1,53 +1,53 @@
-.todo-add-container{
+.todo-add-container {
   padding: 10px;
-  background-color:lavender ;
+  background-color: lavender;
   padding-top: 30px;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
-.todo-items-label{
+.todo-items-label {
   display: flex;
 }
-.todo-add-input{
-  font-size: 22px; 
-  background-color:rgb(175, 200, 201);
+.todo-add-input {
+  font-size: 22px;
+  background-color: rgb(175, 200, 201);
   border: 2px solid darkseagreen;
   outline: none;
   padding: 8px 5px;
   color: darkred;
   font-weight: 600;
 }
-.todo-add-button{
+.todo-add-button {
   padding: 10px 30px;
   background-color: darkcyan;
   font-size: 20px;
   font-weight: 700;
   color: powderblue;
-  border: 2px solid  rgb(139, 132, 190);
-  margin: auto;    
+  border: 2px solid rgb(139, 132, 190);
+  margin: auto;
   display: block;
   margin-top: 20px;
 }
-.todo-items-list{
+.todo-items-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 10px;
 }
-.todo-buttons{
+.todo-buttons {
   display: flex;
 }
-.todo-ul{
+.todo-ul {
   margin: 0;
   padding: 30px 10px 10px;
   list-style-type: none;
-  background-color: aliceblue; 
+  background-color: aliceblue;
 }
-.todo-li{
+.todo-li {
   margin: 10px 0;
   /* background-color: aliceblue; */
 }
-.todo-edit-input{
+.todo-edit-input {
   padding: 10px 2px;
   background-color: rgb(248, 204, 210);
   color: maroon;
@@ -58,66 +58,72 @@
   border: 2px solid rgb(230, 149, 69);
   border-radius: 8px;
   outline: none;
-}   
-.todo-item-name{
+}
+.todo-item-name {
   margin: 0;
 }
-.todo-delete, .todo-edit, .todo-save{
+.todo-delete,
+.todo-edit,
+.todo-save {
   font-weight: 600;
   font-size: 16px;
   padding: 8px 20px;
-} 
-.todo-delete{
+}
+.todo-delete {
   background-color: firebrick;
   color: cornsilk;
   border: 1px solid saddlebrown;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.todo-edit{
+.todo-edit {
   background-color: bisque;
   color: indianred;
   border: 1px solid brown;
 }
-.todo-edit, .todo-save{
+.todo-edit,
+.todo-save {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-.todo-save{
+.todo-save {
   background-color: lightblue;
-  color:  green;
-  border: 1px solid teal; 
+  color: green;
+  border: 1px solid teal;
 }
-@media screen and (min-width: 768px){
-  .todo-add-container{
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 30px;
+@media screen and (min-width: 768px) {
+  .todo-add-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
   }
-  .todo-add-input{
-      /* padding: 8px; */
+  .todo-add-input {
+    /* padding: 8px; */
   }
-  .todo-add-button{
-      margin: 0;
+  .todo-add-button {
+    border-radius: 5px;
+    margin: 0;
   }
-  .todo-ul{
-      padding: 30px 30px 10px;
+  .todo-ul {
+    padding: 30px 30px 10px;
   }
-  .todo-delete, .todo-edit, .todo-save{
-      font-size: 16px;
-      padding: 8px 20px;
+  .todo-delete,
+  .todo-edit,
+  .todo-save {
+    font-size: 16px;
+    padding: 8px 20px;
   }
-  .todo-item-name{
-      font-size: 22px;    
+  .todo-item-name {
+    font-size: 22px;
   }
 }
-@media screen and (min-width: 1024px){
-  .todo-add-input{
-      font-size: 20px;
-      padding: 8px;
+@media screen and (min-width: 1024px) {
+  .todo-add-input {
+    font-size: 20px;
+    padding: 8px;
   }
-  .todo-add-button{
-      font-size: 18px;
+  .todo-add-button {
+    font-size: 18px;
   }
 }
